@@ -7,9 +7,10 @@ import os
 intents = discord.Intents.all()
 intents.guilds = True
 intents.members = True
-token = 'MTMyMDE4NTExMjY3MTAzMTM0Nw.GPaBvt.uwh37-Wl6IOspJ7ndPECwWiEuT9apqPtKChtbw'
+#export DISCORD_BOT_TOKEN="你的 token"
+token = os.getenv("DISCORD_BOT_TOKEN")
 
-bot = commands.Bot(command_prefix="!", intents=intents)
+bot = commands.Bot(command_prefix="$", intents=intents)
 OWNER_ID = 1317800611441283139  # 修改為你的 Discord 使用者 ID
 
 @bot.event
@@ -128,7 +129,7 @@ class ModerationView(discord.ui.View):
             await interaction.response.send_message(f"封鎖失敗：{e}", ephemeral=True)
 
 
-# ⏹️ Slash 指令：呼叫 GUI 管理面板
+# Slash 指令：呼叫 GUI 管理面板
 @bot.tree.command(name="moderate", description="打開管理 GUI 面板")
 @app_commands.describe(member="要管理的對象")
 async def moderate(interaction: discord.Interaction, member: discord.Member):
