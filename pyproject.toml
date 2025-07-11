@@ -1,0 +1,20 @@
+[project]
+name = "dcchbot"
+version = "1.0.0"
+description = "一個簡單的 Discord 中文管理機器人，支援 GUI 控制"
+readme = "README.md"
+license = { text = "MIT" }
+authors = [
+  { name = "I_am_from_taiwan", email = "102109040j@gmail.com" }
+]
+requires-python = ">=3.8"
+dependencies = [
+  "discord.py>=2.3.0"
+]
+
+[project.scripts]
+discordmodbot = "dcchbot.main:run_bot"
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
