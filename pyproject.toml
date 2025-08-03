@@ -1,19 +1,20 @@
 [project]
 name = "dcchbot"
-version = "1.0.0"
-description = "一個簡單的 Discord 中文管理機器人，支援 GUI 控制"
+version = "1.8.1"
+description = "一個簡單的中文 Discord 管理機器人，支援 GUI 按鈕封鎖/禁言/警告"
 readme = "README.md"
-license = { text = "MIT" }
+license = {text = "MIT"}
 authors = [
   { name = "I_am_from_taiwan", email = "102109040j@gmail.com" }
 ]
 requires-python = ">=3.8"
-dependencies = [
-  "discord.py>=2.3.0"
-]
+dependencies = ["discord.py>=2.3.0"]
 
 [project.scripts]
-discordmodbot = "dcchbot.main:run_bot"
+dcchbot = "dcchbot.main:run"
+
+[tool.setuptools]
+packages = ["dcchbot"]
 
 [build-system]
 requires = ["setuptools>=61.0"]
